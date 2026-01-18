@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pgrep:*)",
+      "Bash(sudo systemctl:*)",
+      "Bash(sudo systemctl status:*)",
+      "Bash(apt-cache search:*)",
+      "Bash(snap list:*)",
+      "Bash(docker --version:*)",
+      "Bash(docker run:*)",
+      "Bash(chmod:*)",
+      "Bash(lsof:*)",
+      "Bash(xargs kill:*)",
+      "Bash(netstat:*)",
+      "Bash(ss:*)",
+      "Bash(kill:*)",
+      "Bash(curl:*)",
+      "Bash(sudo docker ps:*)",
+      "Read(//home/cadnz/sourcecode/test/**)",
+      "Bash(pkill:*)",
+      "Bash(sudo docker-compose down:*)",
+      "Bash(grep:*)",
+      "Bash(npx prisma migrate dev:*)",
+      "Bash(docker-compose up:*)",
+      "Bash(docker compose:*)",
+      "Bash(sudo docker compose:*)",
+      "Bash(DATABASE_URL=\"mysql://root:root_password@localhost:3307/dms\" npx prisma migrate dev:*)",
+      "Bash(DATABASE_URL=\"mysql://root:root_password@localhost:3307/dms\" npx prisma db push:*)",
+      "Bash(DATABASE_URL=\"mysql://root:root_password@localhost:3307/dms\" npx prisma migrate reset:*)",
+      "Bash(npx prisma generate:*)",
+      "Bash(npm run build:*)"
+    ]
+  }
+}
