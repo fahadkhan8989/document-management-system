@@ -15,7 +15,7 @@ import { LogOut, ChevronLeft, ChevronRight, FileText } from 'lucide-react';
 import { getSocket } from '@/lib/socket';
 
 export default function DashboardPage() {
-  const { user, logout } = useAuth();
+  const { user, logout, loading: authLoading } = useAuth();
   const router = useRouter();
   const [page, setPage] = useState(1);
   const [filters, setFilters] = useState<{ category?: number; search?: string }>({});
@@ -27,10 +27,10 @@ export default function DashboardPage() {
     useDocuments({ page, limit: 9, ...filters });
 
   useEffect(() => {
-    if (!user) {
+    if (!authLoading && !user) {
       router.push('/login');
     }
-  }, [user, router]);
+  }, [user, authLoading, router]);
 
   useEffect(() => {
     const socket = getSocket();
@@ -78,7 +78,16 @@ export default function DashboardPage() {
     setPage(1);
   };
 
-  if (!user) return null;
+  if (authLoading || !user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50/50">
+        <div className="text-center">
+          <div className="w-8 h-8 border-2 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto mb-3" />
+          <p className="text-gray-500 text-sm">Loading...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50/50">

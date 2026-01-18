@@ -28,7 +28,9 @@
       "Bash(DATABASE_URL=\"mysql://root:root_password@localhost:3307/dms\" npx prisma db push:*)",
       "Bash(DATABASE_URL=\"mysql://root:root_password@localhost:3307/dms\" npx prisma migrate reset:*)",
       "Bash(npx prisma generate:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(git check-ignore:*)",
+      "Bash(ls:*)"
     ]
   }
 }
